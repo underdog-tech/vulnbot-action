@@ -17,5 +17,3 @@ jobs:
           SLACK_AUTH_TOKEN: ${{ secrets.SLACK_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ secrets.GITHUB_ORG }}
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
