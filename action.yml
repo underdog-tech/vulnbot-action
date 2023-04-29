@@ -9,13 +9,13 @@ inputs:
     description: "When set to true, disables the VulnBot's ability to post messages to a Slack channel."
     required: false
   SLACK_AUTH_TOKEN:
-    description: "This field represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel."
+    description: "Represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel."
     required: false
   GITHUB_TOKEN:
-    description: "Access token that allows the VulnBot to interact with the GitHub API, enabling it to perform actions such as commenting on issues and opening pull requests."
+    description: "Access token that allows the VulnBot to interact with the GitHub API."
     required: false
   GITHUB_ORG:
-    description: "Refers to the GitHub organization that the repository belongs to, and is used as a parameter in configuring the VulnBot's behavior when monitoring repositories within that organization."
+    description: "Refers to the GitHub organization that the repository belongs to."
     required: false
 runs:
   using: docker
