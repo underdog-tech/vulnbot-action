@@ -19,9 +19,9 @@ jobs:
     - uses: underdog-tech/vulnbot-action@v1
       with:
          config: "config/config.toml"
-         SLACK_AUTH_TOKEN: ${{ secrets.SLACK_AUTH_TOKEN }}
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         GITHUB_ORG: ${{ secrets.GITHUB_ORG }}
+         slack_auth_token: ${{ secrets.SLACK_AUTH_TOKEN }}
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         github_org: ${{ secrets.GITHUB_ORG }}
 ```
 
 ## Input variables
@@ -29,7 +29,6 @@ jobs:
 See the [action.yml](https://github.com/underdog-tech/vulnbot-action/blob/main/action.yml) file for more detail information.
 
 -   config: Path that specifies the ecosystems for which the VulnBot will be reporting vulnerabilities.
--   disable-slack: When set to true, disables the VulnBot's ability to post messages to a Slack channel.
--   SLACK_AUTH_TOKEN: Represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel.
--   GITHUB_TOKEN: Access token that allows the VulnBot to interact with the GitHub API.
--   GITHUB_ORG: Refers to the GitHub organization that the repository belongs to.
+-   slack_auth_token: Represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel.
+-   github_token: Access token that allows the VulnBot to interact with the GitHub API.
+-   github_org: Refers to the GitHub organization that the repository belongs to.
