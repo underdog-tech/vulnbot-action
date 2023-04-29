@@ -5,9 +5,6 @@ inputs:
     default: config.toml
     description: "Path that specifies the ecosystems for which the VulnBot will be reporting vulnerabilities."
     required: false
-  disable-slack:
-    description: "When set to true, disables the VulnBot's ability to post messages to a Slack channel."
-    required: false
   SLACK_AUTH_TOKEN:
     description: "Represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel."
     required: false
@@ -26,7 +23,6 @@ runs:
     GITHUB_ORG: "${{ inputs.GITHUB_ORG }}"
   args:
     - "--config=${{ inputs.config }}"
-    - "--disable-slack=${{ inputs.disable-slack }}"
 branding:
   icon: play
   color: blue
