@@ -1,0 +1,32 @@
+name: "vulnbot-action"
+description: ""
+inputs:
+  config:
+    default: config.toml
+    description: "Path that specifies the ecosystems for which the VulnBot will be reporting vulnerabilities."
+    required: false
+  disable-slack:
+    description: "When set to true, disables the VulnBot's ability to post messages to a Slack channel."
+    required: false
+  SLACK_AUTH_TOKEN:
+    description: "This field represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel."
+    required: false
+  GITHUB_TOKEN:
+    description: "Access token that allows the VulnBot to interact with the GitHub API, enabling it to perform actions such as commenting on issues and opening pull requests."
+    required: false
+  GITHUB_ORG:
+    description: "Refers to the GitHub organization that the repository belongs to, and is used as a parameter in configuring the VulnBot's behavior when monitoring repositories within that organization."
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    SLACK_AUTH_TOKEN: "${{ inputs.SLACK_AUTH_TOKEN }}"
+    GITHUB_TOKEN: "${{ inputs.GITHUB_TOKEN }}"
+    GITHUB_ORG: "${{ inputs.GITHUB_ORG }}"
+  args:
+    - "--config=${{ inputs.config }}"
+    - "--disable-slack=${{ inputs.disable-slack }}"
+branding:
+  icon: play
+  color: blue
