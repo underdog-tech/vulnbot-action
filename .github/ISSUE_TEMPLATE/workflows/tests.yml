@@ -1,0 +1,17 @@
+name: VulnBot Action
+on:
+  push:
+    branches: ["main"]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Send report
+        uses: ./
+        with:
+          SLACK_AUTH_TOKEN: ${{ secrets.SLACK_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ secrets.GITHUB_ORG }}
