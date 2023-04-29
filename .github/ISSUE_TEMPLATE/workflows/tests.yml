@@ -12,6 +12,7 @@ jobs:
       - name: Send report
         uses: ./
         with:
+          config: "tests/config.toml"
           SLACK_AUTH_TOKEN: ${{ secrets.SLACK_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ secrets.GITHUB_ORG }}
