@@ -1,0 +1,28 @@
+name: "vulnbot-action"
+description: ""
+inputs:
+  config:
+    default: config.toml
+    description: "Path that specifies the ecosystems for which the VulnBot will be reporting vulnerabilities."
+    required: false
+  slack_auth_token:
+    description: "Represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel."
+    required: false
+  github_token:
+    description: "Access token that allows the VulnBot to interact with the GitHub API."
+    required: false
+  github_org:
+    description: "Refers to the GitHub organization that the repository belongs to."
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    SLACK_AUTH_TOKEN: "${{ inputs.slack_auth_token }}"
+    GITHUB_TOKEN: "${{ inputs.github_token }}"
+    GITHUB_ORG: "${{ inputs.github_org }}"
+  args:
+    - "--config=${{ inputs.config }}"
+branding:
+  icon: play
+  color: blue

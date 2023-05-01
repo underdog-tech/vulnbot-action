@@ -1,0 +1,40 @@
+default_slack_channel = "C01J0UC6MK8"
+
+# Configure the ecosystems we're reporting on
+[[ecosystem]]
+label = "Go"
+slack_emoji = ":golang:"
+
+[[ecosystem]]
+label = "Npm"
+slack_emoji = ":javascript:"
+
+[[ecosystem]]
+label = "Pip"
+slack_emoji = ":python:"
+
+[[ecosystem]]
+label = "Rubygems"
+slack_emoji = ":ruby:"
+
+# Configure the severities we're reporting on
+[[severity]]
+label = "Critical"
+slack_emoji = ":severity_highest:"
+
+[[severity]]
+label = "High"
+slack_emoji = ":severity_high:"
+
+[[severity]]
+label = "Moderate"
+slack_emoji = ":severity_medium:"
+
+[[severity]]
+label = "Low"
+slack_emoji = ":severity_low:"
+
+# Configure the teams for reporting on repositories they own
+[[team]]
+name = "InfoSec"
+github_slug = "infosec"
