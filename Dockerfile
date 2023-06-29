@@ -1,4 +1,4 @@
-FROM ghcr.io/underdog-tech/vulnbot:v0.4.0
+FROM ghcr.io/underdog-tech/vulnbot:v0.4.1
 
 COPY entrypoint.sh /entrypoint.sh
 
