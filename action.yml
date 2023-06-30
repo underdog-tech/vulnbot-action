@@ -22,6 +22,7 @@ runs:
     GITHUB_TOKEN: "${{ inputs.github_token }}"
     GITHUB_ORG: "${{ inputs.github_org }}"
   args:
+    - "scan"
     - "--config=${{ inputs.config }}"
 branding:
   icon: play
