@@ -1,4 +1,4 @@
-FROM ghcr.io/underdog-tech/vulnbot:v0.5.0
+FROM ghcr.io/underdog-tech/vulnbot:v0.5.1
 
 ENTRYPOINT [ "/vulnbot" ]
-CMD [ "scan" ]
+CMD [ "scan" ,"-r=slack"]
