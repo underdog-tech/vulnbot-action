@@ -6,33 +6,41 @@ label = "Go"
 slack_emoji = ":golang:"
 
 [[ecosystem]]
-label = "Npm"
+label = "Java"
+slack_emoji = ":apache_maven:"
+
+[[ecosystem]]
+label = "Js"
 slack_emoji = ":javascript:"
 
 [[ecosystem]]
-label = "Pip"
+label = "Python"
 slack_emoji = ":python:"
 
 [[ecosystem]]
-label = "Rubygems"
+label = "Ruby"
 slack_emoji = ":ruby:"
 
 # Configure the severities we're reporting on
 [[severity]]
 label = "Critical"
-slack_emoji = ":severity_highest:"
+slack_emoji = ":red_circle:"
 
 [[severity]]
 label = "High"
-slack_emoji = ":severity_high:"
+slack_emoji = ":large_orange_circle:"
 
 [[severity]]
 label = "Moderate"
-slack_emoji = ":severity_medium:"
+slack_emoji = ":large_yellow_circle:"
 
 [[severity]]
 label = "Low"
-slack_emoji = ":severity_low:"
+slack_emoji = ":large_blue_circle:"
+
+[[severity]]
+label = "Undefined"
+slack_emoji = ":white_check_mark:"
 
 # Configure the teams for reporting on repositories they own
 [[team]]

@@ -7,13 +7,13 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - name: Create .env file
+        run: |
+          echo "SLACK_AUTH_TOKEN=${{ secrets.SLACK_AUTH_TOKEN }}" > .env
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
+          echo "GITHUB_ORG=${{ secrets.GITHUB_ORG }}" >> .env
       - name: Send report
-        # Using the action defined in the same repository.
-        uses: ./
+        uses: ./ # Using the action defined in the same repository.
         with:
           config: "tests/config.toml"
-          slack_auth_token: ${{ secrets.SLACK_AUTH_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_org: ${{ secrets.GITHUB_ORG }}
