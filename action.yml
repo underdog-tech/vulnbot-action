@@ -5,8 +5,15 @@ inputs:
     default: config.toml
     description: "Path that specifies the ecosystems for which the VulnBot will be reporting vulnerabilities."
     required: false
+  reporters:
+    default: "slack"
+    description: "Comma/repeat-separated list of reporters to run (e.g. slack, console)."
+    required: false
   slack_auth_token:
     description: "Represents the Slack authentication token that allows the VulnBot to access and post messages to a Slack channel."
+    required: false
+  notion_auth_token:
+    description: "Represents the Notion authentication token that allows the VulnBot to access and update Notion documents."
     required: false
   github_token:
     description: "Access token that allows the VulnBot to interact with the GitHub API."
@@ -21,9 +28,11 @@ runs:
     SLACK_AUTH_TOKEN: "${{ inputs.slack_auth_token }}"
     GITHUB_TOKEN: "${{ inputs.github_token }}"
     GITHUB_ORG: "${{ inputs.github_org }}"
+    NOTION_AUTH_TOKEN: "${{ inputs.notion_auth_token }}"
   args:
     - "scan"
     - "--config=${{ inputs.config }}"
+    - "-r=${{ inputs.reporters }}"
 branding:
   icon: play
   color: blue
