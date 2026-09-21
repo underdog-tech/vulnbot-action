@@ -13,6 +13,7 @@ jobs:
           echo "SLACK_AUTH_TOKEN=${{ secrets.SLACK_AUTH_TOKEN }}" > .env
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
           echo "GITHUB_ORG=${{ secrets.GITHUB_ORG }}" >> .env
+          echo "NOTION_AUTH_TOKEN=${{ secrets.NOTION_AUTH_TOKEN }}" >.env
       - name: Send report
         uses: ./ # Using the action defined in the same repository.
         with:
